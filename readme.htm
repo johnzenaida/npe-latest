@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+</head>
+
+<body>
+=== Network Posts Extended ===
+Contributors : johnzenausa,superfrontender
+Tags: network global posts, network posts, global posts, multisite posts, shared posts, network posts extended
+Donate link: https://wp-plugins.johncardell.com/
+Requires at least: 4.0
+Tested up to: 4.9.8
+Requires PHP: 7
+Stable tag: trunk
+License: GPLv2 or later
+License URI: https://www.gnu.Org/licenses/gpl-2.0.html
+
+== Description ==
+The plugin is designed to share posts, pages, and custom post types from across entire network on any given page for any subdomain and the main blog. You may list them in single or double column mode. Add custom css styling to your text, images, whole container and title.
+
+== Long Description ==
+<p>The plugin is designed to share posts, pages, and custom post types from across entire network on any given page for any subdomain and the main blog. You may list them in single or double column mode. Add custom css styling to your text, images, whole container and title.</p><p>You can specify categories and tags. All posts will be shown in ascending and descending order by date or post ID. You can specify how old (in days) the collected posts may be. Also you can specify how many posts should be displayed from each blog. You can set thumbnails image size and style or disable them.</p><p>You may also include or exclude posts, pages, categories, and blogs by using the appropriate arguments. They are all listed at the end of this file.</p>
+
+== Installation ==
+You may install the plugin using one of the three following methods:
+1. Unzip file and using an ftp program upload it to the wp-content/plugins/ directory then activate in plugins page.
+2. Using the search field in the admin plugins area type in &#34network posts extended&#34; (without quotes) then install from there.
+3. Upload zip file through the standard plugins menu.
+
+== Frequently Asked Questions ==
+Q) Should I network activate the plugin?
+A) You may network activate the plugin so it is available on all sites or activate individually. When network activated there will be a new menu for the plugin under settings &#62; Network Posts Thumbnails which will allow you to give certain permissions to blog owners when it comes to the thumbnail sizes. You may allow to create new sizes just on their blog or across the entire network which will affect everybody. I recommend only to allow it for their blog only. This allows you to also include it as a custom feature if you want to charge for this capability.
+
+Q) May I only include an x amount of posts that I choose?
+A) Yes, use include_post= and put in your posts in comma separated format surrounded by double quotes.
+Example include_post=&#39;5,78,896&#39;.
+
+Q) My title is too long and looks ugly, anyway I can shorten it?
+A) You may shorten it using the argument title_length=&#39;10&#39; will rounded it off to the last complete word before it reaches 10 characters.
+
+Q) I would like to just show an X amount of random posts on the home page. Is it possible?
+A) Use the following arguments: random=&#39;true&#39; and list=&#39;10&#39; will show ten different posts randomly whenever the page is loaded. If you add list=&#34;15&#34; it will show fifteen different posts randomly.
+
+Q) May I order my posts in specific order by date or title?
+A) Yes you may give specific ordering of your posts or pages via alphabetical order (by title), by date or page or post ID specific order.
+
+Q) Does this plugin list pages from woocommerce?
+A) Yes it now does as of version 0.1.4. You may list via page/post id or via taxonomy=&#39;custom woocommerce category&#39;. Woocommerce default directory/taxonomy is product show you would just use the argument taxonomy=&#39;Product&#39; which is the title of the directory. (Not case sensitive)
+<strong>Note:</strong> Also works with Tips and Tricks eStore plugin.
+
+Q) Will this plugin also include the prices from the products I create with the Woocommerce and eStore plugins?
+A) Yes it will including the following argument: include_price=&#39;woocommerce&#39; or include_price=&#39;estore&#39;. If for some reason you have both plugins installed you would use include_price=&#39;estore|woocommerce&#39; if you want to list them both.
+
+Q) When I use the following argument wrap_start=&#34;&lt;div style=&#34;color:blue;&#34;&gt;&#34; and wrap_end=&#34;&lt;/div&gt;&#34; the text does not change color.
+A) That is because since double quotes are used after the = sign  they must be changed to single quotes and use double quotes in the html. For example you would have to have wrap_start=&#39;&lt;div style=&#34;color:blue;&#34;&gt;&#39;. Notice the double quotes in the html? Do not forget to change the closing argument to wrap_end=&#39;&lt;/div&gt;&#39;
+
+Q) Does this plugin work with custom post types. That is post_type=&#39;custom-post-type&#39;.
+A) Yes it now works with custom post types.
+
+Q) Can I show full post from any blog on any site?
+A) Yes you can by using the following argument full_text=&#39;true&#39;
+
+Q) I have custom image sizes I have already created and uploaded. How can I use them with your plugin without having to go through the process of re-creating image sizes with your plugin?
+A) You can use them directly as a featured image or you can install the plugin https://wordpress.org/plugins/featured-image-from-url/ and put in the link directly to the images. This plugin will automatically switch to the one listed here. Don&#39;t forget to change size=&#39;H,W&#39; to the dimensions of the featured image.
+
+Q) The default layout is quite ugly. How do I improve it?
+A) Using css I have made this plugin very flexible. It now contains two default layouts. Their names are &#34;default&#34; and &#34;inline&#34;. You may choose either one by using use_layout=&#39;default&#39; or use_layout=&#39;inline&#39;.
+
+Q) Can I use shortcode attributes in dynamically created url?
+A) Yes you may now use the shortcode attributes in a url. Example: http://localhost/wordpress/home-page/?column=infinite&include_blog=1,2,3&taxonomy=wordpress-develop,second-posts
+
+Q) Where do I put the shortcodes?
+A) Paste the shortcode on any page, post or custom post type using the <strong><em>Text</em></strong> not the <strong><em>Visual</em></strong> area of the posts editor field.
+
+Q) How do I use this plugin in widgets?
+A) Use the default WordPress text widget and post the code in there under the <strong><em>Text</em></strong> not <strong><em>Visual</em></strong> code area so it will not mess with the shortcode. This widget is now automatically shortcode ready. No need for a special widget or plugin to activate shortcodes in widgets.
+
+Q) Is it possible to include custom post type meta information?
+A) As long as you use the <a href="https://wordpress.org/plugins/advanced-custom-fields/">Advanced Custom Fields Plugin</a> it will be possible to do so. Read the readme.txt file for arguments to add to the shortcode.
+
+== Screen Shots ==
+1. Single Column Default
+2. Single Column with Blue Header and Thumbnail Dimmensions size=&#34;240,160&#34;
+3. Double Column with Red Header
+
+== Changelog ==
+= 6.2 =
+Fixed function which ACF changed on update so to be compatible again.
+
+= 6.1 =
+Added the ability to output numerical and simple text based strings from the Advanced Custom Fields plugin. Important: Won't do complicated fields because the output will just be converted to a long text string which will look like gibberish.
+
+= 6.0 =
+Put back the class for the read more link. Verified stability with WordPress 4.9.8
+
+= 5.9 =
+When title was set to contain a link it lost it&#39;s class so added a new class called &#34;netsposts-posttitle-link&#34; to make the customization via css easier. So when title is not linkable the class is &#34;netsposts-posttitle&#34; and when it is a link the class is &#34;netsposts-posttitle-link&#34;.
+
+= 5.6 =
+Changed some css by changing the following html code: id=&#34;block-wrapper&#34 to class=&#34;netsposts-block-wrapper&#34; and id=&#34;netsposts-paginate&#34; to class=&#34;netsposts-paginate&#34; and id=&#34;netsposts-menu&#34; to class=&#34;netsposts-menu&#34;
+
+= 5.5 =
+Added two new arguments &#45; hide_source=&#39;true&#39; hide_excerpt=&#39;true&#39;. Default false &#40;will automatically show hide_source and hide_excerpt unless set to &#39;true&#39;&#41;.
+
+= 3.9 =
+Added the ability to create custom fields and order your posts as such. For example if you create a custom post type to show upcoming events you can list them in either ASC (ascending) or DESC (descending) order. Plus you can show past events or events that are occurring today. Plus changed the link structure from using post ID to using permalinks.
+
+= 3.8 =
+Fixed bug where post_height=&#39;&#39; stopped working.
+
+= 3.7 =
+Added the ability to keep original image quality in plugin admin menu. Keep original image is defaulted to on and by-passes WordPress automatically choosing compressed version of image. Check the box to turn this feature off.
+
+= 3.6 =
+Added ability to open links in new window.
+
+= 3.5 =
+Updated way WordPress runs shortcode to keep up with security standards plus fixing taxonomy error. Now compatible with WordPress version 4.8.3. Plus added to be able to call taxonomies by keyword using partial category/tag name.
+
+= 3.4 =
+Fixed error in show_categories php code which was showing parse error in error_log file.
+
+= 3.3 =
+Fixed use_shortcode_in_excerpt function now works again. Added the argument show_categories so if you would like to include a link to the category page you may add show_categories=&#39;true&#39;
+
+= 3.2 =
+
+Fixed syntax error created in some environments.
+
+= 3.1 =
+Corrected the ability to process shorcodes in the excerpt field. Now must use: use_shortcode_in_excerpt=&#39;true&#39;. You must use a plugin like &#60;a href=&#39;https://wordpress.org/plugins/code-snippets/&#39;&#62;Code Snippets&#60;/a&#62; or add the following code to your functions.php file which allows you to process shortcodes in the excerpt box of posts and if activated pages also. &lt;?php add_filter&#40;&#39;the_excerpt&#39;, &#39;do_shortcode&#39;&#41;; ?&gt; without the backticks. The above plugin will not want you to include the &lt;?php and ?&gt;. Just enter it as so: add_filter&#40;&#39;the_excerpt&#39;, &#39;do_shortcode&#39;&#41;;. If your functions.php file has an opening php tag just insert the latter snippet also.
+
+= 3.0 =
+Added the ability to process shortcodes in the excerpt field. Just set filter_excerpt=&#39;true&#39;. That is if you have a shortcode in the posts excerpt field in the admin page or have auto_excerpt=&#39;true&#39; it will process all shortcodes.
+
+= 2.9 =
+Added ability to use shortcodes in dynamic url.
+
+= 2.8 =
+Fixed css bug
+
+= 2.7 =
+Fixed Call to Function errors.
+
+= 2.6 =
+Fixed use_layout=&#39;inline&#39; so it looks like it was supposed to. Has Title, meta-info and content floating to the right of thumbnail.
+
+= 2.5 =
+Fixed bug where content was flowing outside of content area when listed on a page.<br>I have added the following arguments:
+* full_text=&#39;true&#39; will show entire blog content &#40;default - false&#41;
+* use_layout=&#39;&#39; &#40;default or inline - the default is set to use_layout=&#39;default&#39;&#41;. When set to inline all meta data and content will be aligned to the right of the image.
+* align_thumbnail=&#39;&#39; &#40;default is left. May now choose the image to align to the right of the text if use_layout=&#39;inline&#39; is chosen.
+* wrap_excerpt_container_start=&#39;CSS Code Here or anything else for that matter&#39; wrap_excerpt_container_end=&#39;&#39;. So if you want to add a class to the excerpt/content area you may do so by using wrap_excerpt_container_start=&#39;&lt;div class=&#39;custom-class&#39;&gt;&#39; wrap_excerpt_container_end=&#39;&lt;/div&gt;&#39;.
+
+= 2.4 =
+Fixed bug where it stopped working with posty_type=&#39;page&#39; and now works with custom post types. So if you make a post type called listing you may now add, post_type=&#39;listing&#39;.
+
+= 2.2 =
+Fixed incompatibility problem between browsers. Now tested and works with Firefox, Chrome and Microsoft Edge. Should work with Safari and Opra browsers also.
+
+= 2.0 =
+Added the ability to resize images and use them as the default thumbnail.
+
+= 1.5 =
+This plugin now will show prices for commerce sites using the Woocommerce or WP eStore plugins.
+
+= 1.4 =
+The plugin can now list post and pages from any subomain/blog including woocommerce and eStore. No longer syntax error created.
+
+= 1.3 =
+Removed below custom class and added checkbox to remove read more link on excerpts.
+Added text box to remove read more link individually by inserting the title of post/page.
+Moved the location of the plugin from the tools menu to inside the settings menu for less confusion.
+It is now named &#39;Network Posts Ext&#39; with the quotes of course.
+
+= 1.2 =
+Added custom class to plugins net_posts_extended.css file .netsposts-read-more-link
+This way you can remove the read more links from the excerpts by using the following attribute:
+a.netsposts-read-more-link &#123; visibility: hidden; &#125; or a.netsposts-read-more-link  &#123; display: none; &#125;
+
+= 1.1 =
+Added ability to list posts in specific order by date, title or page &#40;pertains to post_type=&#39;page&#39; only&#41;.
+Arguments now work with paginate=&#39;false&#39; random=&#39;true&#39;
+Fixed call to function error
+
+= 1.0 =
+Added two more arguments.
+manual_excerpt_length=&#39;&nbsp;&#39; plus post_height=&#39;&nbsp;&#39;
+
+= 0.9 =
+Added the function to be able to use your own custom classes in tools area.
+Plus added the following arguments:
+column_width &#40;default &#40;px&#41;: 200&#41;
+title_color &#40;default: black&#41;
+text_color - color of text. Examples text_color=&#39;red&#39; or text_color=&#39;#ff0000&#39;. Both will have the texts color turn red.
+meta_info - Default true
+
+= 0.8 =
+wrap_title_start,wrap_title_end - wrap_image_start,wrap_image_end - wrap_text_start,wrap_text_end.
+meta_width - Same as title length except in percentage to shorten long meta data.
+Added the ability to show posts or pages randomly using the following argument: random=&#39;true&#39;
+The list= argument works with pagination= true or false &#40;default: false&#41;
+
+= 0.10 =
+Added the ability to have custom thumbnail sizes created on image upload.
+You will be able to have image sizes that are also rectangular for better matching on listing your pages. For example an image with a width of 300px and height of 200px.
+
+== Upgrade Notice ==
+Please upgrade to get the latest features and security updates.
+
+== List of Arguments ==
+= Network Posts Extended Shortcodes and Arguments =
+
+&#91;netsposts include_blog=&#39;1,2,5&#39; days=&#39;30&#39; taxonomy=&#39;news&#39; titles_only=&#39;false&#39; show_author=&#39;true&#39; thumbnail=&#39;true&#39; size=&#39;90,90&#39; image_class=&#39;alignleft&#39; auto_excerpt=&#39;true&#39; excerpt_length=&#39;150&#39; show_author=&#39;true&#39; paginate=&#39;true&#39; list=&#39;5&#39;&#93;
+
+Shortcodes go in text menu on posts editor pages. You may also add them to your sidebar via the WordPress built in text widget. Also paste under text menu.
+
+= Including and/or Excluding pages, posts, categories, and blogs =
+
+include_post &#150; list of posts/pages that you want to include &#40;example: include_post=&#39;5&#39; or include_post=&#39;5,8,153&#39; for multiple posts.
+
+exclude_post &#150; list of posts/pages that you want to exclude &#40;example: exclude_post=&#39;5&#39; &#150; exclude_post=&#39;5,8,153&#39;
+
+include_blog &#150; list of blogs, with the posts which will be displayed &#150; include_blog=&#39;5,8&#39; &#40;default all blogs&#41;
+
+exclude_blog &#150; list of excluded blogs &#40;default none&#41; &#40;works only if include_blogs argument is not present&#41;
+
+filter_excerpt &#150; The plugin will now process and show shortcodes in the excerpt field. Just set filter_excerpt=&#39;true&#39; &#40; Default: false &#41;
+
+taxonomy &#150; list of categories to include in list. Default is all categories. Example: taxonomy=&#39;books&#39; or taxonomy=&#39;digital-books,product,news&#39; for multiple categories. Use slug of category for the taxonomy name.
+taxonomy_type can have 3 values - category, tag, all. Example: taxonomy_type=&#39;tag&#39; taxonomy=&#39;records&#39;. That way if there is a category and a tag both named &#39;records&#39; you may choose which to select. To include both just separate with commas. Example: taxonomy_type=&#39;tag,category&#39;. You can only select woocommerce taxonomy_type if post_type=&#39;product&#39; which is a custom woocomerce post type.
+If post_type is &#39;product&#39; taxonomy_type can be &#39;product_tag&#39;, &#39;product_cat&#39; or both.
+
+= Miscellaneous show/hide arguments +
+
+days &#150; how old in days the post can be &#40;default 0&#39; &#150; no limit&#41; Example: days=&#39;10&#39; will only show the posts/pages which have been created within the last ten days.
+
+titles_only &#150; if true shows titles only &#40;default false&#41; Example: titles_only=&#39;true&#39; will only show the titles. Not the image or excerpt.
+
+show_author &#150; if true shows a posts author &#40;default false&#41; Example: show_author=&#39;true&#39;
+
+To hide the source area just add the following argument to the shortcode &#150; hide_source=&#39;true&#39; will hide all the meta_info like author, date created, etc...
+hide_excerpt=&#39;true&#39; will hide the text, that is the whole excerpt field.
+
+= Thumbnails =
+
+thumbnail &#150; if true shows thumbnails &#40;default false&#41; Example: thumbnail=&#39;true&#39;
+
+size &#150; size of thumbnail &#40;width, height&#41; &#40;default thumbnail&#41; Example: size=&#39;50,50&#39; will show a thumbnail which has a size of 50px high and 50px wide.
+
+image_class &#150; CSS class for image &#40;default post&#150;thumbnail&#41; Example: image_class=&#39;custom-image-class&#39;
+
+= Excerpts =
+
+auto_excerpt &#150; if true an excerpt will be taken from post content, if false a post excerpt &#40;shows the short description in the excerpt box. Note you will need to use a plugin to show this box when creating pages instead of posts&#41; will be used &#40;default false&#41;.
+
+excerpt_length &#150; the length of excerpt &#40;in characters&#41; &#40;auto_excerpt should be true&#41;&#40;default 400&#39;&#41; Example: excerpt_length=&#39;500&#39; will show the first 500 characters.
+
+manual_excerp_length &#150; You can set the length of the manual excerpt. For example if someone has 500 words in the manual excerpt field it may be trimmed down to 400 like so: manual_excerpt_length=&#39;400&#39; &#40;defaul 9999&#41;
+
+= Listing Designs =
+
+post_type &#150; type of posts &#40;default post&#41; Example: post_type=&#39;page&#39; will show pages not posts in the list. To show posts either don&#39;t include this argument &#40;since posts are default&#41; or use post_type=&#39;post&#39;. Now works with custom post types. So you may add post_type=&#39;mycustomposttype&#39;.
+
+full_text &#150; full text instead of excerpt &#40;default false&#41; Example: full_text=&#39;true&#39; will show entire text in content field in list.
+
+= Showing Date =
+
+date_format &#150; format of the post date &#40;default n/j/Y&#41;. Example this will show January 2 1963 for example. If you would like to show the date first just use: date_format=&#39;j/n/Y&#39;.
+
+= Custom HTML =
+
+wrap_start, wrap_end &#150; you can wrap the posts for example: wrap_start=&#39;&lt;div style=&#34;font&#150;weight:bold;vertical&#150;align:middle;&#34; class=&#34;myclass&#34;&gt;&#39; wrap_end=&#39;&lt;/div&gt;&#39;
+
+wrap_title_start,wrap_title_end &#150; wrap_image_start,wrap_image_end &#150; wrap_text_start,wrap_text_end wrap_excerpt_container_start=&#39;&#39;,wrap_excerpt_container_end=&#39;&#39; . Use the same way as wrap_start,wrap_end above. But will only wrap given argument.
+
+page_title_style &#150; style for the page title &#40;default: none&#41; Example: page_title_style=&#39;italic&#39; will make the title italic. For bold you may use: page_title_style=&#39;bold&#39; for italic and bold use: page_title_style=&#39;italic,bold&#39;
+
+Miscellaneous List Arguments &#150; Pagination Links and Order Post/Page by Properties
+
+end_size &#150; how many numbers on either the start and the end list edges &#40;used for pagination&#41; Example: end_size=&#39;3&#39; will show the first and last three pages as links in numerical form.
+
+mid_size &#150; how many numbers to either side of current page, but not including current page &#40;used for pagination&#41;
+
+order_by &#150; Sort in ascending &#40;default value&#41; and descending order via the following arguments &#150; Ascending: order_post_by=&#39;alphabetical_order&#39; order_post_by=&#39;date_order&#39; order_post_by=&#39;page_order&#39; and descending: order_post_by=&#39;alphabetical_order desc&#39; order_post_by=&#39;date_order desc&#39; order_post_by=&#39;page_order desc&#39; &#40;note: descending must be surrounded by single or double quotes because of the empty space after page_order
+
+Pagination &#150; When list is to have multiple pages
+
+paginate &#150; if true the result will be paginated &#40;default false&#41; Example: paginate=&#39;true&#39; will break the list in to multiple pages by the list argument.
+
+list &#150; how many posts per page &#40;default 10&#41; Example: list=&#39;20&#39; will show the last 20 posts or pages. If paginate=&#39;true&#39; is used above then will break the list in to pages showing 20 posts or pages on each page.
+
+prev_next &#150; Whether to include the previous and next links in the list or not &#40;used for pagination. Default: true&#41;
+
+prev &#150; the previous page link text. Works only if prev_next argument is set to true. &#40;Default: &#xab; Previous&#41;
+
+next &#150; The next page text. Works only if prev_next argument is set to true. Example: next=&#39;New Posts&#39; will replace the default &#150; Next &#150; with &#150; New Posts. &#40;Default: Next &#xbb;&#41;
+
+random &#150; Set to true to show posts randomly. To show an x amount of posts randomly make sure the list argument is set to the amount you want. &#40;Default: set to false&#41;
+
+= Custom Arguments =
+
+= Titles =
+
+title &#150; custom title &#40;default: none&#41; Example: title=&#39;Joe&#39;s Favorite Bicycles&#39;
+
+title_color &#150; Color of the title text. Example: title_color=&#39;red&#39; or title=&#39;color:#ff0000&#39; both will give you a color of red. &#40;Default black&#41;
+
+title_length &#150; Cuts off the title at X amount of characters so won&#39;t make long wrap around which looks ugly. The length is in characters including spaces and symbols &#40;Default 999&#41;
+
+include_link_title &#150; This will now make all titles clickable &#40;default false&#41;. If you want the titles to also link to the post or page set this argument to true. Example: include_link_title=&#39;true&#39;
+
+exclude_link_title &#150; This will exclude certain posts/pages from the title being clickable. For example if you don&#39;t want the title to link to posts 8,45,47 you would use: exclude_link_title_posts=&#39;8,45,47&#39;
+
+= Custom Column Designs =
+
+column &#150; number of columns &#40;default: 1&#41;
+
+column_width &#150; Width of column in pixels. Example column_width=&#39;250&#39;. &#40;Default: 200&#41;
+
+post_height &#150; Sets the default height for all posts. Recommended for 2 column mode. For example if manual_excerpt_length=&#39;400&#39; or excerpt_length=&#39;400&#39; and you want posts with less of an excerpt to have same dimensions use this feature. post_height=&#39;300&#39; will give a standard height of 300 pixels. So if post has less characters of text will still keep square shape so titles line up nicely.
+
+meta_info &#150; Example: meta_info=&#39;false&#39; &#40;Default &#39;true&#39;&#41;
+
+meta_length &#150; Example: meta_length=&#39;75%&#39; &#40;Default 100%&#41;
+
+menu_name &#150; name of the menu &#40;should be created in Appearance > Menu&#41;&#40;default: The one created in Appearance > Menu&#41;
+
+menu_class &#150; CSS class for the menu. Example menu_class=&#39;menu-class&#39;. Separate multiple classes with commas.
+
+container_class &#150; the CSS class that is applied to the menu container
+
+use_shortcode_in_excerpt &#150; If set to true any shortcodes that appear in the excerpt will be processed. Default: false. Note: You must activate the ability to have your site be able to process shortcodes in excerpt field.
+
+show_categories &#150; If set to true will also include a link to the category archive page. show_categories=&#39;true&#39; default is false.
+
+Added ability to call all categories that contain certain keyword or part as in the following example:If you type &#39;test-%&#39; it will find test-1, test-2, test-3 etc.I.e. it will find categories that starts with &#39;test-&#39;. if you type &#39;%test&#39; it will find categories that ends with &#39;test&#39; word.
+
+link_open_new_window=&#39;true&#39; &#40;default false&#41; for all posts and link_open_new_window=&#39;1,2,3,4,5&#39; for posts with given ids.
+
+<strong>Using Custom Image Sizes:</strong>
+
+Under settings > Network Posts Ext menu you will see a box to add a custom image size. You may name it anything you like and use the default alias name or your own. Wants created you must include the following in your shortcode:thumbnail=&#39;true&#39; size=&#39;Name of Alias&#39;. For example if what is listed in the alias box is 600x400 then it would be size=&#39;600x400&#39; so your thumbnails will have a size of 600px wide and 400px high. You may change the diplayed size of these images using custom css.For example you may create a class called img-size-300x200 and change the displayed image size thus: .img-size-300x200 &#x7b; height:300px;width:200px; &#x7d;. Then add this to the shortcode: image_class=&#39;img-size-300x200&#39;.
+align_image=&#39;right&#39;,align_image=&#39;left&#39;.
+use_layout=&#39;default&#39;,use_layout=&#39;inline&#39;<br><br>
+
+Advanced Custom Fields - To add the field with the meta info just use the argument include_acf_fields='name-of-custom-field-slug'. It will appear with the label name followed by the input (default false). If you'd like to include the label just add the argument hide_acf_label=&#39;false&#39;.
+Note: All fields are surrounded by &lt;span&gt;&lt;&#47;span&gt; tags. If you'd like to change them you will have to add a bit of coding. Here's some examples.<br><br>
+/* Beginning Explanation of Code<br><br>
+
+add_filter('netsposts_get_acf_html', 'print_acf_html', 10, 2);
+
+function print_acf_html($fields, $post){
+$html = '';
+foreach($fields as $field){
+$html .= '<div>' . $field['label'] . ': ' . $field['value'] . '</div>';
+}
+return $html;
+}
+
+or even
+
+function print_acf_html($fields, $post){
+$html = '<div>';
+$html = '<p>';
+$html .= $fields['some_field']['label'];
+$html .= '</p>';
+$html = '<p>';
+$html .= $fields['some_field']['value'];
+$html .= '</p>';
+$html .= '</div>';
+return $html;
+}
+
+include_acf_fields='some_field_1,some_field_2'<br><br>
+
+End explanation of code */<br>
+
+Note: Replace some_field with the actual field name. Don't replace anything else.<br><br>
+
+<strong>Network Activated:</strong> Now you can network activate and have full control in the admin menu under settings which site owners can resize images. You may have them resize images just on their own site or globally or not allow them to resize images at all. Works great sold as a premium feature.<br>
+
+For a complete tutorial please visit: <a href=&#39;https://wp-plugins.johncardell.com/&#39;>https://wp-plugins.johncardell.com/</a>
+</body>
+
+</html>

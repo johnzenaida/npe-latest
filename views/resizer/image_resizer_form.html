@@ -1,0 +1,33 @@
+<div class="card invisible" id="image_generator_form_wrapper">
+    <form id="image_generator_form" method="POST" action="admin-post.php?action=netsposts_regenerate_images">
+        <h3 id="form_title">Generate images</h3>
+        <fieldset>
+            <input type="hidden" name="submit" value="true"/>
+            <input type="hidden" name="id" id="size_id"/>
+            <select name="sizes">
+            </select>
+            <div>
+                <p>
+                    <label><input type="radio" name="select_images" value="all" checked/>All</label>
+                </p>
+                <p>
+                    <label><input type="radio" name="select_images" value="selected_number"/>Select number</label>
+                </p>
+            </div>
+            <div>
+                <div class="param-group">
+                    <label for="images_count">Images count</label>
+                    <input type="number" name="images_count" id="images_count" class="form-control"/>
+                    <label class="error-text"></label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success" id="regenerate">Generate</button>
+            <button type="button" class="btn btn-remove btn-flat" id="close_generator_form">Close</button>
+        </fieldset>
+    </form>
+    <div class="progress-bar-wrapper invisible" id="regeneration_progress">
+        <label id="image_file_name"></label>
+        <progress id="regeneration_progress" max="100" value="0"/>
+    </div>
+    <p class="error-text" id="resizer-error-message"></p>
+</div>

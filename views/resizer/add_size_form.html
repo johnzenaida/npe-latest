@@ -1,0 +1,70 @@
+<form id="size_parameters" class="card invisible" method="POST" action="admin-post.php?action=netsposts_add_size">
+    <h3 id="form_title">Create item</h3>
+    <div class="model-loading">
+        <p>
+            <img src="%loader_url%" width="30px" alt="loading"/>
+            Loading model
+        </p>
+    </div>
+    <fieldset>
+        <input type="hidden" name="id" id="size_id"/>
+        <div>
+            <div class="param-group">
+                <label for="name">Caption</label>
+                <input type="text" name="name" id="name" class="form-control"/>
+                <label class="error-text"></label>
+            </div>
+            <button type="submit" class="btn btn-success" id="add_size">Create</button>
+            <button type="button" class="btn btn-remove btn-flat" id="close_add_size_form">Close</button>
+        </div>
+        <div>
+            <div class="param-group">
+                <label for="alias">Alias</label>
+                <input type="text" name="alias" id="alias" class="form-control"/>
+                <label class="error-text"></label>
+            </div>
+        </div>
+        <div>
+            <div class="param-group">
+                <label for="image_width">Maximum width</label>
+                <input type="number" name="width" id="width" class="form-control"/>
+                <label class="error-text"></label>
+            </div>
+            <div class="param-group">
+                <label for="height">Maximum height</label>
+                <input type="number" name="height" id="height" class="form-control"/>
+                <label class="error-text"></label>
+            </div>
+        </div>
+        <div>
+            <label><input type="checkbox" id="crop" name="crop"/>Crop</label>
+            <br/>
+        </div>
+        <div id="crop_directions">
+            <div class="param-group">
+                <h4>Crop direction X</h4>
+                <p>
+                    <label><input type="radio" name="crop_x" value="center" checked/>Center</label>
+                </p>
+                <p>
+                    <label><input type="radio" name="crop_x" value="left"/>Left</label>
+                </p>
+                <p>
+                    <label><input type="radio" name="crop_x" value="right"/>Right</label>
+                </p>
+            </div>
+            <div class="param-group">
+                <h4>Crop direction Y</h4>
+                <p>
+                    <label><input type="radio" name="crop_y" value="center" checked/>Center</label>
+                </p>
+                <p>
+                    <label><input type="radio" name="crop_y" value="top"/>Top</label>
+                </p>
+                <p>
+                    <label><input type="radio" name="crop_y" value="bottom"/>Bottom</label>
+                </p>
+            </div>
+        </div>
+    </fieldset>
+</form>
